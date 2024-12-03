@@ -1,0 +1,43 @@
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  grid-area: content;
+  border: 2px solid rgba(255, 255, 255, .5);
+}
+
+.editor {
+  display: inline-block;
+  min-width: 500px;
+  max-width: 920px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card {
+  padding: 32px;
+  background-image: linear-gradient(to right bottom, #00D6BD, #150636 100%);
+  transition: all 0.3s ease-in-out;
+  &.cyan {
+    background-image: linear-gradient(to right bottom, #00D6BD 0%, #150636 100%);
+    .ide:before {
+      background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(76,200,200,1) 25%, rgba(0,0,0,0) 75%);
+    }
+  }
+  &.purple {
+    background-image: linear-gradient(to right bottom, #7300D6 0%, #150636 100%);
+    .ide:before {
+      background: linear-gradient(135deg, rgba(0,0,0,0) 0%, #9F89C9 25%, rgba(0,0,0,0) 75%);
+    }
+  }
+  &.orange {
+    background-image: linear-gradient(to right bottom, #D6C600 0%, #A00C00 100%);
+    .ide:before {
+      background: linear-gradient(135deg, rgba(0,0,0,0) 0%, #C9C289 25%, rgba(0,0,0,0) 75%);
+    }
+  }
+  &.green {
+    background-image: linear-gradient(to right bottom, #D6D600 0%, #198321 100%);
+    .ide:before {
+      background: linear-gradient(135deg, rgba(0,0,0,0) 0%, #E5FF1C 25%, rgba(0,0,0,0) 75%);
+    }
+  }
+}

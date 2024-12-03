@@ -13,11 +13,23 @@
   --frame-highlight-border: hsla(0, 0%, 100%, 0.75);
 }
 
-body, html {
+body,
+html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialised;
 }
 
@@ -45,7 +57,7 @@ body {
   align-items: center;
   padding: 1rem;
   border-radius: 10px;
-  background: rgba(#121415, .36);
+  background: rgba(#121415, 0.36);
   backdrop-filter: blur(10px);
   border: 1px solid lighten(#121415, 10%);
   color: #fff;
@@ -53,7 +65,7 @@ body {
   width: 356px;
   button[data-cancel] {
     color: #fff !important;
-    background: rgba(255, 255, 255, .05)
+    background: rgba(255, 255, 255, 0.05);
   }
 }
 
@@ -65,49 +77,74 @@ body {
 
 // highlight.js
 .hljs {
-  color: var(--syntax-text)
+  color: var(--syntax-text);
 }
 
-.hljs-subst,.hljs-tag {
-  color: var(--syntax-tag)
+.hljs-subst,
+.hljs-tag {
+  color: var(--syntax-tag);
 }
 
-.hljs-bullet,.hljs-link,.hljs-literal,.hljs-number,.hljs-quote,.hljs-regexp {
-  color: var(--syntax-number)
+.hljs-bullet,
+.hljs-link,
+.hljs-literal,
+.hljs-number,
+.hljs-quote,
+.hljs-regexp {
+  color: var(--syntax-number);
 }
 
-.hljs-attr,.hljs-code,.hljs-section,.hljs-selector-class,.hljs-title {
-  color: var(--syntax-definition)
+.hljs-attr,
+.hljs-code,
+.hljs-section,
+.hljs-selector-class,
+.hljs-title {
+  color: var(--syntax-definition);
 }
 
 .hljs-strong {
-  font-weight: 700
+  font-weight: 700;
 }
 
 .hljs-emphasis {
-  font-style: italic
+  font-style: italic;
 }
 
-.hljs-keyword,.hljs-name,.hljs-selector-tag {
-  color: var(--syntax-keyword)
+.hljs-keyword,
+.hljs-name,
+.hljs-selector-tag {
+  color: var(--syntax-keyword);
 }
 
-.hljs-attribute,.hljs-property,.hljs-symbol {
-  color: var(--syntax-property)
+.hljs-attribute,
+.hljs-property,
+.hljs-symbol {
+  color: var(--syntax-property);
 }
 
-.hljs-class .hljs-title,.hljs-params,.hljs-title.class_ {
-  color: var(--syntax-definition)
+.hljs-class .hljs-title,
+.hljs-params,
+.hljs-title.class_ {
+  color: var(--syntax-definition);
 }
 
-.hljs-addition,.hljs-built_in,.hljs-selector-attr,.hljs-selector-id,.hljs-selector-pseudo,.hljs-string {
-  color: var(--syntax-string)
+.hljs-addition,
+.hljs-built_in,
+.hljs-selector-attr,
+.hljs-selector-id,
+.hljs-selector-pseudo,
+.hljs-string {
+  color: var(--syntax-string);
 }
 
-.hljs-template-variable,.hljs-type,.hljs-variable {
-  color: var(--syntax-variable)
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable {
+  color: var(--syntax-variable);
 }
 
-.hljs-comment,.hljs-deletion,.hljs-meta {
-  color: var(--syntax-comment)
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: var(--syntax-comment);
 }

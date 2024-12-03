@@ -1,16 +1,18 @@
+import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
 // eslint-disable-next-line camelcase
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from 'next/font/google';
+import '@radix-ui/themes/styles.css';
 import '@frontend/styles/global.scss';
-import "@radix-ui/themes/styles.css";
 import { ReactNode } from 'react';
-import { Toaster } from "sonner";
-import { Theme } from "@radix-ui/themes";
+import { Toaster } from 'sonner';
+// eslint-disable-next-line import/order
+import Footer from '@frontend/components/Footer';
 
 export const jetbrains = JetBrains_Mono({
-  weight: ["500"],
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  weight: ['500'],
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <body>
+      <body>
         <div className="app">
           <Toaster position="bottom-center" />
           <Theme
@@ -38,6 +40,7 @@ export default function RootLayout({
           </Theme>
           <Footer />
         </div>
-      </body>    </html>
+      </body>{' '}
+    </html>
   );
 }

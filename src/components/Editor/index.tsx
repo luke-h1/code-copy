@@ -32,16 +32,25 @@ function handleTabKey(event: KeyboardEvent<HTMLTextAreaElement>) {
 }
 
 export default function Editor() {
-  const [language, setLanguage] = useState<string>('javascript');
+  const [language, setLanguage] = useState<string>('go');
   const [theme, setTheme] = useState<string>('purple');
 
   const initialCode = `
-    function Snippet() {
-      const snippet = 'https://snippet.fyi';
-      return (
-        <li>Snippet URL: {snippet}</li>
-      );
-    }    
+    package main
+
+    func main() {
+      defer jsii.Close()
+
+      app := awscdk.NewApp(nil)
+
+      NewGoOnAwsStack(app, "GoOnAwsStack", &GoOnAwsStackProps{
+        awscdk.StackProps{
+          Env: env(),
+        },
+      })
+
+      app.Synth(nil)
+    }
   `;
 
   const [code, setCode] = useState<string>(initialCode);
@@ -50,8 +59,6 @@ export default function Editor() {
   const [cardPadding, setCardPadding] = useState<string>('64px');
 
   const highlightedCode = hljs.highlight(language, code).value;
-
-
 
   useEffect(() => {
     const textAreaElement = document.querySelector(`.${styles.textarea}`);
@@ -68,7 +75,9 @@ export default function Editor() {
   }
 
   const exportCard = (format: 'png' | 'svg' | 'url') => {
-    const cardElement = document.querySelector(`.${styles.card}`);
+    const cardElement = document.querySelector(
+      `.${styles.card}`,
+    ) as HTMLDivElement;
 
     if (!cardElement) {
       // eslint-disable-next-line no-useless-return
@@ -181,10 +190,11 @@ export default function Editor() {
                   onKeyDown={handleTabKey}
                   tabIndex={-1}
                 />
-                <div id='highlighted-code-div' 
+                <div
+                  id="highlighted-code-div"
                   className={styles.highlighted}
                   // eslint-disable-next-line react/no-danger
-                  dangerouslySetInnerHTML={{__html: highlightedCode}}
+                  dangerouslySetInnerHTML={{ __html: highlightedCode }}
                 />
               </div>
             </div>
